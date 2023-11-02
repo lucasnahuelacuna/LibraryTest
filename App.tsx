@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, useColorScheme } from 'react-native';
 import Card1 from './src/components/Card1';
-import Card2 from './src/components/Card2.tsx/Card2';
+import Card2 from './src/components/Card2/Card2';
 import Card3 from './src/components/Card3';
 
 function App(): JSX.Element {

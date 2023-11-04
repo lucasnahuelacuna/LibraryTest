@@ -1,29 +1,34 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
-const Card2 = () => {
+const Card2 = ({ name, date, title, description, imageURL }: any) => {
+  
+  const getInitials = (name: string) => {
+    if(name) {
+      const initials = name?.match(/(\b\S)?/g)?.join("")?.match(/(^\S|\S$)?/g)?.join("");
+      return initials?.toUpperCase();
+    } else {
+      return 'XX';
+    }
+  }
+
   return (
     <View style={styles.cardContainer}>
         <View style={styles.cardHeaderContaier}>
             <View style={styles.avatar}>
-                <Text style={styles.textAvatar}>LA</Text>
+                <Text style={styles.textAvatar}>{getInitials(name)}</Text>
             </View>
             <View style={styles.headerText}>
-                <Text>Title</Text>
-                <Text>Subtitle</Text>
+                <Text>{name}</Text>
+                <Text>{date}</Text>
             </View>
         </View>
         <Image
-            source={{ uri: "https://comerciallosangeles.com/wp-content/uploads/2022/09/Mesa-de-trabajo-2-800x800.jpg"}}
+            source={{ uri: imageURL }}
             style={{ width: '100%', height: 200 }}
         />
-        <Text style={styles.title}>Title</Text>
-        <Text>
-            Lorem ipsum dolor sit amet, 
-            consectetur adipiscing elit. 
-            Donec vel egestas dolor, 
-            nec dignissim metus.
-        </Text>
+        <Text style={styles.title}>{title}</Text>
+        <Text>{description}</Text>
     </View>
   )
 }

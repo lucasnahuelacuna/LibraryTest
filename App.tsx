@@ -16,7 +16,13 @@ function App(): JSX.Element {
           handleConfirm={() => console.log('Confirm Button Pressed')}
           handleCancel={() => console.log('Cancel Button Pressed')}
         />
-        <Card2 />
+        <Card2 
+          name='Luke Hopkins'
+          date='October 25th 2023'
+          title='My Title'
+          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel egestas dolor, nec dignissim metus.'
+          imageURL='https://comerciallosangeles.com/wp-content/uploads/2022/09/Mesa-de-trabajo-2-800x800.jpg'
+        />
         <Card3 />
       </View>
     </SafeAreaView>

@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         fontWeight: '600'
     },
     buttonText: {
-        color: '#0000ff',
+        color: '#6002EE',
         fontWeight: '500'
     }
 });

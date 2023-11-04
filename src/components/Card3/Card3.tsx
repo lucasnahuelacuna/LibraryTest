@@ -1,16 +1,14 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
 const Card3 = () => {
   return (
     <View style={styles.cardContainer}>
         <Text style={styles.title}>Title</Text>
-        <Text>
-            Lorem ipsum dolor sit amet, 
-            consectetur adipiscing elit. 
-            Donec vel egestas dolor, 
-            nec dignissim metus.
-        </Text>
+        <TextInput 
+            placeholder='Introduce some text'
+            style={styles.input}
+        />
         <View style={styles.cardActionsContainer}>
             <Pressable style={{ marginRight: 15 }}>
                 <Text style={styles.buttonText}>Deny</Text>
@@ -46,11 +44,18 @@ const styles = StyleSheet.create({
   },
   title: {
       fontSize: 18,
-      fontWeight: '600'
+      fontWeight: '600',
+      marginBottom: 10
   },
   buttonText: {
-      color: '#0000ff',
+      color: '#6002EE',
       fontWeight: '500'
+  },
+  input: {
+    borderColor: "#999",
+    borderWidth: 1,
+    borderRadius: 5,
+    marginBottom: 10
   }
 });
 

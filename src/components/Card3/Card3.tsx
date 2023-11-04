@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
-const Card3 = ({ title, placeholder, confirmButtonText, cancelButtonText, handleConfirm, handleCancel, text, onChangeText }: any) => {
+interface Card3Props {
+    title: string;
+    placeholder: string; 
+    confirmButtonText: string; 
+    cancelButtonText: string; 
+    handleConfirm: () => void; 
+    handleCancel: () => void;
+    text: string;
+    onChangeText: () => void;
+}
+
+const Card3 = ({ title, placeholder, confirmButtonText, cancelButtonText, handleConfirm, handleCancel, text, onChangeText }: Card3Props) => {
   return (
     <View style={styles.cardContainer}>
         <Text style={styles.title}>{title}</Text>

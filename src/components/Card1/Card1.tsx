@@ -1,7 +1,16 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-const Card1 = ({ title, description, confirmButtonText, cancelButtonText, handleConfirm, handleCancel}: any) => {
+interface Card1Props {
+    title: string;
+    description: string; 
+    confirmButtonText: string; 
+    cancelButtonText: string; 
+    handleConfirm: () => void; 
+    handleCancel: () => void;
+}
+
+const Card1 = ({ title, description, confirmButtonText, cancelButtonText, handleConfirm, handleCancel}: Card1Props) => {
   return (
     <View style={styles.cardContainer}>
         <Text style={styles.title}>{title}</Text>

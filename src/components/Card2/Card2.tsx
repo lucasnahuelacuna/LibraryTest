@@ -1,7 +1,14 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
-const Card2 = ({ name, date, title, description, imageURL }: any) => {
+interface Card2Props {
+  name: string; 
+  date: string; 
+  title: string; 
+  description: string; 
+  imageURL: string;
+} 
+const Card2 = ({ name, date, title, description, imageURL }: Card2Props) => {
   
   const getInitials = (name: string) => {
     if(name) {

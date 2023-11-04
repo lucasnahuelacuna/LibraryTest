@@ -9,7 +9,7 @@ interface Card3Props {
     handleConfirm: () => void; 
     handleCancel: () => void;
     text: string;
-    onChangeText: () => void;
+    onChangeText: (e: any) => void;
 }
 
 const Card3 = ({ title, placeholder, confirmButtonText, cancelButtonText, handleConfirm, handleCancel, text, onChangeText }: Card3Props) => {

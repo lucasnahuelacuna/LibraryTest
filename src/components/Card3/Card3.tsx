@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
-const Card3 = () => {
+const Card3 = ({ title, placeholder, confirmButtonText, cancelButtonText, handleConfirm, handleCancel, text, onChangeText }: any) => {
   return (
     <View style={styles.cardContainer}>
-        <Text style={styles.title}>Title</Text>
+        <Text style={styles.title}>{title}</Text>
         <TextInput 
-            placeholder='Introduce some text'
+            placeholder={placeholder}
             style={styles.input}
+            onChangeText={onChangeText}
+            value={text}
         />
         <View style={styles.cardActionsContainer}>
-            <Pressable style={{ marginRight: 15 }}>
-                <Text style={styles.buttonText}>Deny</Text>
+            <Pressable style={{ marginRight: 15 }} onPress={handleCancel}>
+                <Text style={styles.buttonText}>{cancelButtonText}</Text>
             </Pressable>
-            <Pressable>
-                <Text style={styles.buttonText}>Accept</Text>
+            <Pressable onPress={handleConfirm}>
+                <Text style={styles.buttonText}>{confirmButtonText}</Text>
             </Pressable>
         </View>
     </View>

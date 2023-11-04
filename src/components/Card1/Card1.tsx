@@ -1,22 +1,17 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-const Card1 = () => {
+const Card1 = ({ title, description, confirmButtonText, cancelButtonText, handleConfirm, handleCancel}: any) => {
   return (
     <View style={styles.cardContainer}>
-        <Text style={styles.title}>Title</Text>
-        <Text>
-            Lorem ipsum dolor sit amet, 
-            consectetur adipiscing elit. 
-            Donec vel egestas dolor, 
-            nec dignissim metus.
-        </Text>
+        <Text style={styles.title}>{title}</Text>
+        <Text>{description}</Text>
         <View style={styles.cardActionsContainer}>
-            <Pressable style={{ marginRight: 15 }}>
-                <Text style={styles.buttonText}>Deny</Text>
+            <Pressable style={{ marginRight: 15 }} onPress={handleCancel}>
+                <Text style={styles.buttonText}>{cancelButtonText}</Text>
             </Pressable>
-            <Pressable>
-                <Text style={styles.buttonText}>Accept</Text>
+            <Pressable onPress={handleConfirm}>
+                <Text style={styles.buttonText}>{confirmButtonText}</Text>
             </Pressable>
         </View>
     </View>

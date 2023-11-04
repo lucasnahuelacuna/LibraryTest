@@ -8,7 +8,14 @@ function App(): JSX.Element {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Card1 />
+        <Card1 
+          title='My Title'
+          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel egestas dolor, nec dignissim metus.'
+          confirmButtonText='Confirm'
+          cancelButtonText='Cancel'
+          handleConfirm={() => console.log('Confirm Button Pressed')}
+          handleCancel={() => console.log('Cancel Button Pressed')}
+        />
         <Card2 />
         <Card3 />
       </View>

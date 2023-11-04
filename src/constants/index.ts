@@ -1,1 +1,0 @@
-export const IMAGE = require('./../../assets/images/mountain_bike.png');

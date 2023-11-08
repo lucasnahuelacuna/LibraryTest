@@ -1,20 +1,9 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
-
-interface Card1Props {
-    title: string;
-    description: string; 
-    confirmButtonText?: string; 
-    cancelButtonText?: string; 
-    handleConfirm?: () => void; 
-    handleCancel?: () => void;
-}
-
-const Card1 = ({ title, description, confirmButtonText, cancelButtonText, handleConfirm, handleCancel}: Card1Props) => {
-  return (
-    <View style={styles.cardContainer}>
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+const Card3 = ({ title, placeholder, confirmButtonText, cancelButtonText, handleConfirm, handleCancel, text, onChangeText }) => {
+    return (<View style={styles.cardContainer}>
         <Text style={styles.title}>{title}</Text>
-        <Text>{description}</Text>
+        <TextInput placeholder={placeholder} style={styles.input} onChangeText={onChangeText} value={text}/>
         <View style={styles.cardActionsContainer}>
             <Pressable style={{ marginRight: 15 }} onPress={handleCancel}>
                 <Text style={styles.buttonText}>{cancelButtonText}</Text>
@@ -23,10 +12,8 @@ const Card1 = ({ title, description, confirmButtonText, cancelButtonText, handle
                 <Text style={styles.buttonText}>{confirmButtonText}</Text>
             </Pressable>
         </View>
-    </View>
-  )
-}
-
+    </View>);
+};
 const styles = StyleSheet.create({
     cardContainer: {
         backgroundColor: '#fff',
@@ -50,12 +37,18 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
-        fontWeight: '600'
+        fontWeight: '600',
+        marginBottom: 10
     },
     buttonText: {
         color: '#6002EE',
         fontWeight: '500'
+    },
+    input: {
+        borderColor: "#999",
+        borderWidth: 1,
+        borderRadius: 5,
+        marginBottom: 10
     }
 });
-
-export default Card1;
+export default Card3;

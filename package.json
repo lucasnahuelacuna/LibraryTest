@@ -1,13 +1,17 @@
 {
   "name": "LibraryTest",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "files": ["src", "dist/*", "types/*"],
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "build": "rm -rf dist && tsc && tsc -m es6 --outDir lib-esm && yalc publish && yalc push"
   },
   "dependencies": {
     "react": "18.2.0",

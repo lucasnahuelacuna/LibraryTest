@@ -1,18 +1,7 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-
-interface Card1Props {
-    title: string;
-    description: string; 
-    confirmButtonText?: string; 
-    cancelButtonText?: string; 
-    handleConfirm?: () => void; 
-    handleCancel?: () => void;
-}
-
-const Card1 = ({ title, description, confirmButtonText, cancelButtonText, handleConfirm, handleCancel}: Card1Props) => {
-  return (
-    <View style={styles.cardContainer}>
+const Card1 = ({ title, description, confirmButtonText, cancelButtonText, handleConfirm, handleCancel }) => {
+    return (<View style={styles.cardContainer}>
         <Text style={styles.title}>{title}</Text>
         <Text>{description}</Text>
         <View style={styles.cardActionsContainer}>
@@ -23,10 +12,8 @@ const Card1 = ({ title, description, confirmButtonText, cancelButtonText, handle
                 <Text style={styles.buttonText}>{confirmButtonText}</Text>
             </Pressable>
         </View>
-    </View>
-  )
-}
-
+    </View>);
+};
 const styles = StyleSheet.create({
     cardContainer: {
         backgroundColor: '#fff',
@@ -57,5 +44,4 @@ const styles = StyleSheet.create({
         fontWeight: '500'
     }
 });
-
 export default Card1;

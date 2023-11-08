@@ -3,8 +3,8 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 
 interface Card2Props {
   name: string; 
-  date: string; 
-  title: string; 
+  date?: string; 
+  title?: string; 
   description: string; 
   imageURL: string;
 } 

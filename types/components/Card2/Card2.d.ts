@@ -1,8 +1,8 @@
 import React from 'react';
 interface Card2Props {
     name: string;
-    date: string;
-    title: string;
+    date?: string;
+    title?: string;
     description: string;
     imageURL: string;
 }
